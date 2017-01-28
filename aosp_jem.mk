@@ -1,5 +1,5 @@
 #
-# Copyright (C) 2011 The Android Open Source Project
+# Copyright (C) 2016 The Android Open-Source Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -14,6 +14,17 @@
 # limitations under the License.
 #
 
-add_lunch_combo aosp_jem-userdebug
-add_lunch_combo omni_jem-userdebug
+# Use 44.1 kHz UI sounds
+$(call inherit-product-if-exists, frameworks/base/data/sounds/AudioPackage13.mk)
 
+# Inherit device configuration
+$(call inherit-product, device/amazon/jem/device.mk)
+
+# Inherit from those products. Most specific first.
+$(call inherit-product, $(SRC_TARGET_DIR)/product/aosp_base.mk)
+
+PRODUCT_NAME := aosp_jem
+PRODUCT_DEVICE := jem
+PRODUCT_BRAND := google
+PRODUCT_MODEL := Amazon Jem
+PRODUCT_MANUFACTURER := android
