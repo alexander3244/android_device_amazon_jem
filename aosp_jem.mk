@@ -1,11 +1,11 @@
 #
-# Copyright (C) 2013 The Android Open-Source Project
+# Copyright (C) 2016 The Android Open-Source Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
 # You may obtain a copy of the License at
 #
-# http://www.apache.org/licenses/LICENSE-2.0
+#      http://www.apache.org/licenses/LICENSE-2.0
 #
 # Unless required by applicable law or agreed to in writing, software
 # distributed under the License is distributed on an "AS IS" BASIS,
@@ -14,5 +14,14 @@
 # limitations under the License.
 #
 
-PRODUCT_MAKEFILES := $(LOCAL_DIR)/aosp_jem.mk \
-                     $(LOCAL_DIR)/candy_jem.mk
+# Inherit device configuration
+$(call inherit-product, device/amazon/jem/device.mk)
+
+# Inherit from those products. Most specific first.
+$(call inherit-product, $(SRC_TARGET_DIR)/product/aosp_base.mk)
+
+PRODUCT_NAME := aosp_jem
+PRODUCT_DEVICE := jem
+PRODUCT_BRAND := google
+PRODUCT_MODEL := Amazon Jem
+PRODUCT_MANUFACTURER := android

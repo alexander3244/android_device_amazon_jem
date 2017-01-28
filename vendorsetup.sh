@@ -14,6 +14,7 @@
 # limitations under the License.
 #
 
-add_lunch_combo full_jem-eng
-add_lunch_combo cm_jem-userdebug
+add_lunch_combo candy_jem-userdebug
+add_lunch_combo aosp_jem-userdebug
+
 
