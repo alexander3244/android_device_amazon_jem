@@ -42,6 +42,8 @@ $(INSTALLED_BOOTIMAGE_TARGET): \
 #	$(hide) $(call assert-max-image-size,$@, \
 #		$(BOARD_BOOTIMAGE_PARTITION_SIZE),raw)
 
+RECOVERY_PATCH_INSTALL := NULL
+
 LZMA_BIN := $(shell which lzma)
 
 $(INSTALLED_RECOVERYIMAGE_TARGET): \
